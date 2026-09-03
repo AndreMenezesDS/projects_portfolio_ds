@@ -1,0 +1,133 @@
+/* name=assets/css/dark.css */
+/* Dark theme overrides - include after main.css in index.html */
+
+/* color variables */
+:root{
+  --bg: #0b0c0f;        /* page background (very dark) */
+  --surface: #101217;   /* sections / container background */
+  --card: #16181b;      /* article / card background */
+  --muted: #9aa0a6;     /* secondary text */
+  --text: #e9eef6;      /* main text (off-white) */
+  --accent: #38a3ff;    /* link/button accent color */
+  --button-text: #ffffff;
+  --outline: rgba(255,255,255,0.04);
+}
+
+/* base */
+html, body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* wrapper / main containers */
+#wrapper, #main, .inner {
+  background: transparent !important;
+  color: var(--text) !important;
+}
+
+/* header */
+#header {
+  background: transparent;
+  border-bottom: 1px solid var(--outline);
+}
+#header .logo, #header .logo strong {
+  color: var(--text) !important;
+}
+
+/* icons (social) */
+#header .icons a,
+.icons a,
+.contact a {
+  color: var(--text) !important;
+  opacity: 0.95;
+}
+
+/* headings and section titles */
+h1, h2, h3, h4, h5 {
+  color: var(--text) !important;
+}
+
+/* muted / paragraph text */
+p, li {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* feature cards and project posts */
+.features article,
+.posts article,
+section, .major, .posts .image {
+  background: transparent;
+}
+.features article .content,
+.posts article {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--outline);
+  color: var(--text);
+  padding: 1.15rem;
+  border-radius: 6px;
+}
+
+/* icons inside cards */
+.features article .icon,
+.posts article .icon {
+  color: var(--accent) !important;
+}
+
+/* actions / buttons */
+ul.actions .button,
+.button {
+  background: var(--accent) !important;
+  color: var(--button-text) !important;
+  border: none;
+  box-shadow: none;
+}
+ul.actions .button:hover,
+.button:hover {
+  filter: brightness(1.05);
+}
+
+/* links */
+a, a:visited {
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* contact list */
+ul.contact li {
+  background: transparent;
+  border: none;
+}
+ul.contact li a {
+  color: var(--text) !important;
+}
+
+/* images: subtle dim so white text stands out when overlaid */
+.image.object img {
+  filter: contrast(0.98) brightness(0.95);
+}
+
+/* small tweaks for readability */
+ul, li {
+  color: var(--muted);
+}
+blockquote, pre, code {
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* ensure forms/buttons with light bg are adjusted */
+button, input[type="submit"], input[type="button"] {
+  background: var(--accent);
+  color: var(--button-text);
+  border: none;
+}
+
+/* fallback for any remaining white backgrounds */
+* {
+  background-color: transparent !important;
+}
